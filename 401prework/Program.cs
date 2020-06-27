@@ -9,7 +9,7 @@ namespace _401prework
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, and welcome to my 401 ASP.NET prework. Please choose from the options below.");
-            string options = "0.Exit Program\n1. Array Max Result\n2. Leap Year Calculator\n3. Perfect Sequence\n4. Sum of Rows";
+            string options = "0. Exit Program\n1. Array Max Result\n2. Leap Year Calculator\n3. Perfect Sequence\n4. Sum of Rows";
             Console.WriteLine(options);
             int choice = int.Parse(Console.ReadLine());
             while (choice != 0)
@@ -19,8 +19,7 @@ namespace _401prework
                 Console.WriteLine(options);
                 choice = int.Parse(Console.ReadLine());
             }
-            Console.WriteLine("Thanks for visiting. Press any button to close.");
-            Console.ReadLine();
+            Console.WriteLine("Thanks for visiting!");
         }
 
 
@@ -36,6 +35,9 @@ namespace _401prework
                     break;
                 case 3:
                     HandlePerfectSequence();
+                    break;
+                case 4:
+                    HandleSumOfRows();
                     break;
             }
         }
@@ -93,7 +95,7 @@ namespace _401prework
 
         public static string PerfectSequence(List<int> arr)
         {
-            if (arr.Sum() == arr.Aggregate(1, (x1, x2) => x1 * x2))
+            if (arr.Sum() == arr.Aggregate(1, (x, y) => x * y))
             {
                 return "Yes, it's a perfect sequence.";
             }
@@ -130,7 +132,74 @@ namespace _401prework
             Console.WriteLine(perfResult);
         }
 
-        
+        /*
+         * Problem 4: Sum of Rows
+           Problem Statement
+            Given a matrix of integers. Return the sum of each row in a single dimensional array.
 
+            Input Format
+            a multidimensional array with the dimensions of m x n (m = rows, n = columns).
+
+            duplicate integers are possible.
+            Negative numbers are possible
+            both m and n can vary in length
+            The user should specify the length and the width of the array within the console. To populate the numbers, you may randomly generate them, or have the user input one by one.
+
+            The method should take in the multidimensional array and return the single dimensional array with the sums
+
+            Sample Input
+            int[,] myArray = new int[3, 5] { { 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10 }, { 11, 12, 13, 14, 15 } };
+            ^^ The actual input would just be myArray, but the above code shows the pre-initialization before the method is called.
+
+            Sample Output
+            {15,40,65} <-- an integer array
+
+            HINTS
+            for loops are your best friend
+            GetLength() is a method you should look into
+            i.e. in the array above myArray.GetLength(0) is equal to 3
+            myArray.GetLength(1) is equal to 5
+         */
+
+        public static void SumOfRows(int[,] arr)
+        {
+            int m = arr.GetLength(0);
+            int n = arr.GetLength(1);
+            int[] result = new int[m];
+            for (int i = 0; i < m; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    Random rand = new Random();
+                    arr[i, j] = rand.Next(100);
+                }
+            }
+            Console.WriteLine("Your randomly generated matrix is:");
+            for (int i = 0; i < m; i++)
+            {
+                Console.Write("{");
+                for (int j = 0; j < n; j++)
+                {
+                    Console.Write(arr[i, j]);
+                    result[i] += arr[i, j];
+                    if (j != n-1)
+                    {
+                        Console.Write(", ");
+                    }
+                }
+                Console.Write("}");
+                Console.WriteLine("");
+            }
+            Console.WriteLine($"The sum of the rows are: {{{string.Join(", ", result)}}}");
+        }
+
+        public static void HandleSumOfRows()
+        {
+            Console.WriteLine("\n\nPlease enter the number of rows you would like first, and then the number of columns.\nI.e. 2 then 3 for a matrix with 2 rows and 3 columns in each row.");
+            int m = int.Parse(Console.ReadLine());
+            int n = int.Parse(Console.ReadLine());
+            int[,] arr = new int[m, n];
+            SumOfRows(arr);
+        }
     }
 }
