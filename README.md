@@ -56,7 +56,7 @@ Yes
 
 Explanation
 1 * 3 * 2 = 6 && 1 + 3 + 2 = 6
-
+\
 ![Problem 3](401prework/assets/problem3.png)
 
 
