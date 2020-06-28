@@ -34,7 +34,7 @@ For example, 1997 is not a leap year, but 1996 is. 1900 is not a leap year, but 
 
 Want to know more about Leap Year? Watch this 4 minute video HERE{:target="_blank"}
 
-Note: This is not a trick problem. Edge cases do not need to be taken into consideration when creating a solution.
+Note: This is not a trick problem. Edge cases do not need to be taken into consideration when creating a solution.\
 ![Problem 2](401prework/assets/problem2.png)
 
 
