@@ -18,7 +18,7 @@ Sample Input
 Sample Output
 8
 
-![Problem 1](assets/problem1.png)
+![Problem 1](401prework/assets/problem1.png)
 
 ## Leap Year Calculator
 Problem Statement
@@ -35,7 +35,7 @@ For example, 1997 is not a leap year, but 1996 is. 1900 is not a leap year, but 
 Want to know more about Leap Year? Watch this 4 minute video HERE{:target="_blank"}
 
 Note: This is not a trick problem. Edge cases do not need to be taken into consideration when creating a solution.
-![Problem 2](assets/problem2.png)
+![Problem 2](401prework/assets/problem2.png)
 
 
 ## Perfect Sequence
@@ -57,7 +57,7 @@ Yes
 Explanation
 1 * 3 * 2 = 6 && 1 + 3 + 2 = 6
 
-![Problem 3](assets/problem3.png)
+![Problem 3](401prework/assets/problem3.png)
 
 
 ## Sum Of Rows
@@ -81,4 +81,4 @@ int[,] myArray = new int[3, 5] { { 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10 }, { 11, 12
 Sample Output
 {15,40,65} <-- an integer array
 
-![Problem 4](assets/problem4.png)
+![Problem 4](401prework/assets/problem4.png)
